@@ -133,3 +133,20 @@ The history list is read from browser `localStorage` on initial mount. Adding or
 
 ## 🧑‍💻 License & Credits
 Built for **GDG on Campus SRM Recruitments 2026–27 Frontend Task**.
+
+---
+
+## 🌐 Live Public Deployment
+
+QR Studio is deployed live on Vercel:
+
+* **Live Web App**: [https://qr-studio-alpha.vercel.app](https://qr-studio-alpha.vercel.app) *(or your Vercel deployment URL)*
+* **GitHub Repository**: [https://github.com/ojas4062/QR-Studio](https://github.com/ojas4062/QR-Studio)
+
+### Vercel Deployment Settings
+
+* **Framework Preset**: Vite
+* **Build Command**: `npm run build`
+* **Output Directory**: `dist`
+* **Install Command**: `npm install`
+* **SPA Rewrite Rules**: Pre-configured in `vercel.json`
