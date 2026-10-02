@@ -1,5 +1,5 @@
 /* ==========================================================================
-   QR Studio — The Digital Print Workshop Design System
+   QR Studio — Craftsman UI Design System & Precision Controls
    ========================================================================== */
 
 :root {
@@ -8,12 +8,12 @@
   --font-body: 'Instrument Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'DM Mono', monospace;
 
-  /* Color Palette - Dark Theme (Default - Dark Print Proofing Studio) */
+  /* Color Palette - Dark Theme (Default - Dark Precision Studio) */
   --bg-app: #111214;
   --bg-surface: #18191c;
   --bg-surface-elevated: #202227;
   --bg-muted: #16171a;
-  --bg-hover: #26282e;
+  --bg-hover: #24262c;
 
   --border-subtle: #24262b;
   --border-medium: #33363e;
@@ -23,12 +23,12 @@
   --text-secondary: #9a9b9f;
   --text-tertiary: #6a6b70;
 
-  /* Accent: Acid Citron / Electric Lime */
+  /* Accent: Neon Lime / Acid Citron */
   --accent-primary: #cbf700;
-  --accent-hover: #b5f000;
+  --accent-hover: #b8f000;
   --accent-contrast: #111214;
   --accent-light: rgba(203, 247, 0, 0.12);
-  --accent-border: rgba(203, 247, 0, 0.25);
+  --accent-border: rgba(203, 247, 0, 0.3);
 
   --danger-color: #f87171;
   --danger-bg: rgba(248, 113, 113, 0.12);
@@ -48,7 +48,7 @@
 }
 
 [data-theme='light'] {
-  /* Color Palette - Light Theme (Warm Editorial Print Workshop) */
+  /* Color Palette - Light Theme (Warm Precision Workshop) */
   --bg-app: #f7f5ef;
   --bg-surface: #ffffff;
   --bg-surface-elevated: #fcfbfa;
@@ -57,13 +57,13 @@
 
   --border-subtle: #e2ddd0;
   --border-medium: #cbd5e1;
-  --border-focus: #111214;
+  --border-focus: #141413;
 
   --text-primary: #141413;
   --text-secondary: #545350;
   --text-tertiary: #84837e;
 
-  /* Accent: Acid Lime / Deep Ink Accent */
+  /* Accent: Dark Ink Primary with Citron Highlights */
   --accent-primary: #141413;
   --accent-hover: #262624;
   --accent-contrast: #cbf700;
@@ -82,7 +82,7 @@
   --rule-border: 1px solid var(--border-subtle);
 }
 
-/* Base Reset & Studio Grid Background */
+/* Base Reset & Studio Fine Grid Background */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -95,10 +95,10 @@ body {
   color: var(--text-primary);
   line-height: 1.5;
   min-height: 100vh;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
   -webkit-font-smoothing: antialiased;
   
-  /* CSS fine grid lines background texture */
+  /* CSS fine rule grid lines background texture */
   background-image: 
     linear-gradient(to right, var(--border-subtle) 1px, transparent 1px),
     linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px);
@@ -247,7 +247,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.85rem;
 }
 
-/* Type Selector */
+/* Content Type Selector */
 .type-selector-container {
   margin-bottom: 1.25rem;
 }
@@ -273,11 +273,14 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   text-align: left;
   transition: all 0.18s ease;
+
+  min-height: 40px;
 }
 
 .type-tab-button:hover {
   background-color: var(--bg-hover);
   color: var(--text-primary);
+  border-color: var(--border-medium);
 }
 
 .type-tab-button.active {
@@ -333,12 +336,17 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
   font-size: 0.9rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 textarea.input-field {
   resize: vertical;
   min-height: 85px;
+}
+
+.input-field::placeholder {
+  color: var(--text-tertiary);
+  opacity: 0.8;
 }
 
 .input-field:focus, .select-field:focus {
@@ -399,7 +407,7 @@ textarea.input-field {
   border: 1px solid rgba(248, 113, 113, 0.2);
 }
 
-/* Customizer Sections */
+/* Customizer Sections & Dark Style Presets */
 .customizer-container {
   display: flex;
   flex-direction: column;
@@ -436,26 +444,36 @@ textarea.input-field {
   gap: 0.5rem;
 }
 
+/* Dark Presets with Lime Active State */
 .preset-button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.45rem 0.65rem;
+  padding: 0.5rem 0.7rem;
   background-color: var(--bg-muted);
+  color: var(--text-primary);
   border: var(--rule-border);
   border-radius: var(--radius-sm);
   cursor: pointer;
   text-align: left;
   transition: all 0.18s ease;
+  min-height: 38px;
 }
 
 .preset-button:hover {
   background-color: var(--bg-hover);
+  border-color: var(--border-medium);
 }
 
 .preset-button.selected {
   border-color: var(--accent-primary);
-  background-color: var(--bg-surface-elevated);
+  background-color: var(--accent-primary);
+  color: var(--accent-contrast);
+  font-weight: 700;
+}
+
+.preset-button.selected .preset-name {
+  color: var(--accent-contrast);
 }
 
 .swatch-circle {
@@ -482,7 +500,7 @@ textarea.input-field {
   color: var(--text-primary);
 }
 
-/* Colors Row */
+/* Colors Control Row */
 .colors-row-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -493,7 +511,7 @@ textarea.input-field {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.25rem 0.5rem;
+  padding: 0.3rem 0.6rem;
   background-color: var(--bg-muted);
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-sm);
@@ -565,7 +583,7 @@ textarea.input-field {
 
 .size-step-btn {
   flex: 1;
-  padding: 0.3rem 0;
+  padding: 0.35rem 0;
   background-color: var(--bg-muted);
   border: var(--rule-border);
   border-radius: var(--radius-sm);
@@ -573,6 +591,12 @@ textarea.input-field {
   font-size: 0.725rem;
   color: var(--text-secondary);
   cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.size-step-btn:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
 }
 
 .size-step-btn.active {
@@ -593,17 +617,23 @@ textarea.input-field {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.4rem;
+  padding: 0.45rem 0.3rem;
   background-color: var(--bg-muted);
   border: var(--rule-border);
   border-radius: var(--radius-sm);
   cursor: pointer;
   text-align: center;
+  transition: all 0.18s ease;
+}
+
+.ecc-option-btn:hover {
+  background-color: var(--bg-hover);
 }
 
 .ecc-option-btn.active {
   border-color: var(--accent-primary);
-  background-color: var(--bg-surface-elevated);
+  background-color: var(--accent-primary);
+  color: var(--accent-contrast);
 }
 
 .ecc-code {
@@ -614,7 +644,7 @@ textarea.input-field {
 }
 
 .ecc-option-btn.active .ecc-code {
-  color: var(--accent-primary);
+  color: var(--accent-contrast);
 }
 
 .ecc-pct {
@@ -623,7 +653,12 @@ textarea.input-field {
   color: var(--text-tertiary);
 }
 
-/* QR PREVIEW CENTERPIECE — DIGITAL PRINT PROOF MAT */
+.ecc-option-btn.active .ecc-pct {
+  color: var(--accent-contrast);
+  opacity: 0.85;
+}
+
+/* QR PREVIEW CENTERPIECE */
 .sticky-preview-wrapper {
   position: sticky;
   top: 5rem;
@@ -667,7 +702,7 @@ textarea.input-field {
   padding: 2.5rem 1.5rem;
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-sm);
-  min-height: 280px;
+  min-height: 285px;
   position: relative;
   background-size: 16px 16px;
   background-image: 
@@ -763,6 +798,7 @@ textarea.input-field {
   cursor: pointer;
   border: none;
   transition: all 0.18s ease;
+  min-height: 42px;
 }
 
 .primary-btn {
@@ -788,6 +824,7 @@ textarea.input-field {
 
 .secondary-btn:hover:not(:disabled) {
   background-color: var(--bg-hover);
+  border-color: var(--border-medium);
 }
 
 .secondary-btn:disabled {
