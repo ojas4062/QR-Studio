@@ -1,4 +1,7 @@
-# 📱 QR Studio
+# QR Studio
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-qr--studio--beryl.vercel.app-cbf700?style=for-the-badge&logo=vercel&logoColor=black)](https://qr-studio-beryl.vercel.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-ojas4062%2FQR--Studio-24262b?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ojas4062/QR-Studio)
 
 > **GDG on Campus SRM Recruitments 2026–27 — Frontend Task**
 
@@ -140,7 +143,7 @@ Built for **GDG on Campus SRM Recruitments 2026–27 Frontend Task**.
 
 QR Studio is deployed live on Vercel:
 
-* **Live Web App**: [https://qr-studio-alpha.vercel.app](https://qr-studio-alpha.vercel.app) *(or your Vercel deployment URL)*
+* **Live Web App**: [https://qr-studio-beryl.vercel.app/](https://qr-studio-beryl.vercel.app/) *(or your Vercel deployment URL)*
 * **GitHub Repository**: [https://github.com/ojas4062/QR-Studio](https://github.com/ojas4062/QR-Studio)
 
 ### Vercel Deployment Settings
